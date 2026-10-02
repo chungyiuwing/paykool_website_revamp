@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-semibold text-[#494551]">
             
-            {/* 信用卡推薦 with Mega Menu */}
+            {/* 1. 信用卡推薦 with Mega Menu */}
             <div
               className="relative py-6"
               ref={megaMenuRef}
@@ -345,30 +345,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               比較信用卡
             </button>
-
-            {/* 持卡人特權 */}
-            <button
-              onClick={() => handleNav('home', '#services-grid')}
-              className="hover:text-[#5B459B] transition-colors py-2 whitespace-nowrap cursor-pointer"
-            >
-              持卡人特權
-            </button>
-
-            {/* 申請流程 */}
-            <button
-              onClick={() => handleNav('home', '#journey-steps')}
-              className="hover:text-[#5B459B] transition-colors py-2 whitespace-nowrap cursor-pointer"
-            >
-              申請流程
-            </button>
-
-            {/* 常見問題 */}
-            <button
-              onClick={() => handleNav('home', '#faq-section')}
-              className="hover:text-[#5B459B] transition-colors py-2 whitespace-nowrap cursor-pointer"
-            >
-              常見問題
-            </button>
           </nav>
 
           {/* Right Action Buttons */}
@@ -485,27 +461,6 @@ export const Header: React.FC<HeaderProps> = ({
                 className="py-2 px-3 text-left hover:bg-[#f2ebff] rounded-lg text-[#161324]"
               >
                 分期試算器
-              </button>
-
-              <button
-                onClick={() => handleNav('home', '#services-grid')}
-                className="py-2 px-3 text-left hover:bg-[#f2ebff] rounded-lg text-[#161324]"
-              >
-                持卡人特權
-              </button>
-
-              <button
-                onClick={() => handleNav('home', '#journey-steps')}
-                className="py-2 px-3 text-left hover:bg-[#f2ebff] rounded-lg text-[#161324]"
-              >
-                申請流程
-              </button>
-
-              <button
-                onClick={() => handleNav('home', '#faq-section')}
-                className="py-2 px-3 text-left hover:bg-[#f2ebff] rounded-lg text-[#161324]"
-              >
-                常見問題
               </button>
 
               <div className="pt-2 border-t border-[#ece4ff]">
