@@ -34,6 +34,21 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Material Symbols Outlined Icon fallback styling */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
