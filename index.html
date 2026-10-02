@@ -4,19 +4,1011 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PayKool 信用卡 | 迎新優惠與靈活自主分期試算</title>
-    <meta name="description" content="PayKool 信用卡官方網站，為香港主板上市公司 K Cash Limited（港股代號：2483.HK）旗下嶄新科技金融旗艦品牌。提供 Visa Platinum 卡與 Prop Card（業主專屬卡）、3/4/5 個月自主免息分期、現金分期套現及免費 TU 智能信貸評估報告。" />
-    <meta property="og:title" content="PayKool 信用卡 | 迎新優惠與靈活自主分期試算" />
-    <meta property="og:description" content="PayKool 信用卡官方網站，為香港主板上市公司 K Cash Limited（港股代號：2483.HK）旗下嶄新科技金融旗艦品牌。" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="description" content="PayKool 信用卡官方網站，為香港主板上市公司 K Cash Limited（港股代號：2483.HK）旗下嶄新科技金融旗艦品牌。提供 Visa Platinum 及 Prop Card 業主專屬卡。" />
+    
+    <!-- Google Fonts & Material Symbols -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    
+    <!-- Standalone Tailwind CSS CDN for instant Vanilla browser execution -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                purple: '#5B459B',
+                dark: '#1F1841',
+                pink: '#E83375',
+                gold: '#DFC28D'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="bg-[#fdf8ff] text-[#1d192e] font-sans antialiased selection:bg-[#E83375] selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-[#fdf8ff] text-[#161324] antialiased selection:bg-[#E83375] selection:text-white">
+
+    <!-- 1. Universal Top Announcement Bar -->
+    <aside class="sticky top-0 z-50 w-full bg-gradient-to-r from-[#1F1841] via-[#5B459B] to-[#2B225A] text-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 h-10 flex items-center justify-between text-xs sm:text-sm font-medium">
+        <div class="flex items-center gap-2 overflow-hidden truncate">
+          <span class="inline-flex items-center justify-center px-2 py-0.5 rounded text-[11px] font-bold bg-[#E83375] text-white animate-pulse">
+            熱門迎新
+          </span>
+          <span class="truncate">
+            新客迎新 4 揀 1 進行中：送 Tokiwa 20吋前開行李篋或 HK$500 門市現金券！
+          </span>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <button onclick="navigateTo('promotions')" class="text-white hover:text-[#FCE3CB] font-semibold inline-flex items-center gap-1 transition-colors cursor-pointer">
+            <span>立即登記</span>
+            <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2. Universal Aligned Header Navigation -->
+    <header class="w-full bg-white/95 backdrop-blur-xl border-b border-[#ece4ff] sticky top-10 z-40 shadow-[0_2px_12px_rgba(91,69,155,0.04)]">
+      <div class="h-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+        
+        <!-- Logo & Listing Tag -->
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 text-left group cursor-pointer">
+            <img alt="PayKool Logo" class="h-10 w-auto object-contain rounded-xl shadow-xs transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCha5aooS-NhwpW5dt_RV2Yzn1WvexdwwaOvsCAu3mzvIdwWzrMlgWh9_HOE7-KPWwTUmOHM4sQ3hIKW_uPlGMHCVJqai8QIxDwmpqWCW1TjOg7yuPB4pimT_qQoBbQtdY7CgAzZh2Dj2c7jvuiX5VEJLAnwdtcZDoHwHPuTtGoyZa7ehJlj4D2mjKQDaV0GqoMItCzJJL0hf5c3JMTn5WXg847yc8b3ey4hT5UsWGrucXwn3OgNwdTnh_nCDtTmQl0ZZo" />
+            <div class="flex flex-col">
+              <span class="font-extrabold text-[#161324] text-xl sm:text-2xl tracking-tight leading-none">PayKool</span>
+              <span class="text-[10px] text-[#6b6678] font-semibold tracking-tight mt-0.5">K Cash 旗下品牌 | 2483.HK</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-semibold text-[#494551]">
+          <!-- Dropdown container -->
+          <div class="relative py-6" id="mega-menu-container">
+            <button onclick="toggleMegaMenu()" class="py-2 inline-flex items-center gap-1 cursor-pointer hover:text-[#5B459B] transition-colors">
+              <span>信用卡推薦</span>
+              <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="mega-menu-dropdown" class="hidden absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-[#ece4ff] p-3 z-50">
+              <a href="#visa-platinum" onclick="navigateTo('visa-platinum'); return false;" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#fdf8ff] transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-[#5B459B]/10 text-[#5B459B] flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">credit_card</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-[#161324]">Visa Platinum 白金卡</p>
+                  <p class="text-xs text-[#6b6678]">首 $5,000 分期免手續費 · 3 分鐘出卡</p>
+                </div>
+              </a>
+              <a href="#prop-card" onclick="navigateTo('prop-card'); return false;" class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#fdf8ff] transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-[#DFC28D]/20 text-[#9E7D3B] flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[20px]">domain</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-[#161324]">Prop Card（業主專屬卡）</p>
+                  <p class="text-xs text-[#6b6678]">高達 HK$1,000,000 額度 · 免押樓契</p>
+                </div>
+              </a>
+              <div class="my-1 border-t border-[#ece4ff]"></div>
+              <a href="#compare" onclick="navigateTo('compare'); return false;" class="flex items-center gap-2 p-2.5 rounded-lg text-xs font-bold text-[#5B459B] hover:bg-[#f2ebff]">
+                <span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+                <span>兩卡規格與權益全對決</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="#calculator-section" onclick="navigateTo('home', 'calculator-section'); return false;" class="py-2 hover:text-[#5B459B] transition-colors cursor-pointer">
+            靈活自主分期
+          </a>
+          <a href="#cash-advance" onclick="navigateTo('cash-advance'); return false;" class="py-2 hover:text-[#5B459B] transition-colors cursor-pointer" data-nav-target="cash-advance">
+            「Fun K 易」現金分期
+          </a>
+          <a href="#promotions" onclick="navigateTo('promotions'); return false;" class="py-2 hover:text-[#5B459B] transition-colors cursor-pointer" data-nav-target="promotions">
+            推廣優惠
+          </a>
+          <a href="#tu-report" onclick="navigateTo('tu-report'); return false;" class="py-2 hover:text-[#5B459B] transition-colors cursor-pointer" data-nav-target="tu-report">
+            查閱 TU 評級
+          </a>
+        </nav>
+
+        <!-- Right Action Button -->
+        <div class="flex items-center gap-3">
+          <button onclick="openApplyModal('platinum')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#E83375] to-[#5B459B] text-white text-xs sm:text-sm font-bold shadow-md hover:opacity-90 hover:scale-[1.02] transition-all cursor-pointer">
+            立即申請
+          </button>
+          <!-- Mobile Hamburger -->
+          <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-[#161324] hover:bg-[#f2ebff] cursor-pointer">
+            <span class="material-symbols-outlined text-[26px]">menu</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Mobile Menu Drawer -->
+      <div id="mobile-drawer" class="hidden lg:hidden w-full bg-white border-b border-[#ece4ff] p-4 flex flex-col gap-2">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">首頁</a>
+        <a href="#visa-platinum" onclick="navigateTo('visa-platinum'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">Visa Platinum 白金卡</a>
+        <a href="#prop-card" onclick="navigateTo('prop-card'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">Prop Card 業主卡</a>
+        <a href="#compare" onclick="navigateTo('compare'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">比較雙旗艦卡</a>
+        <a href="#cash-advance" onclick="navigateTo('cash-advance'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">「Fun K 易」現金分期</a>
+        <a href="#promotions" onclick="navigateTo('promotions'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">最新推廣優惠</a>
+        <a href="#tu-report" onclick="navigateTo('tu-report'); return false;" class="p-2.5 rounded-lg font-bold text-sm text-[#161324] hover:bg-[#f2ebff]">智能信貸評估 (TU 報告)</a>
+      </div>
+    </header>
+
+    <!-- 3. PAGE VIEWS CONTAINER -->
+    <main class="w-full flex-1 min-h-[600px]">
+
+      <!-- ================= PAGE 1: HOME ================= -->
+      <section id="view-home" class="page-view active w-full">
+        <!-- Hero Promo Carousel -->
+        <div class="w-full bg-[#fdf8ff] pt-6 pb-4">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative w-full overflow-hidden rounded-3xl shadow-xl border border-[#ece4ff] bg-white">
+              <div class="relative w-full h-[320px] sm:h-[400px] lg:h-[450px] overflow-hidden">
+                
+                <!-- Slide 0 -->
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 opacity-100 z-10">
+                  <img alt="Apple Duo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqp-1fQCL2qkk8G2zTahdAznjRYVFP9zMD2Bx_eITzbOk6YHFWNLP0zzagfL302tHFAot-XobTfMBRFH-Ay2LhFGHFvop06pHYxU_IjUTK8SsBCv202E5uBd4hpHh-KaRDincNBMqA_5xvd7nEX89QuQ99ONyklinU-Vac5kgXQzzzcTuhOpmlYuy9UmhjffKJnXbHKo4elH1X-LUvpaJoaBNJLby72TswvZ7EaPjO2Yz1JtqjIvdyNutl311PYKkjYQ" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#161324]/85 via-transparent to-black/20"></div>
+                  <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-[#E83375]/30 max-w-xl">
+                    <div class="flex items-center justify-between gap-3 mb-2">
+                      <span class="px-2.5 py-1 bg-[#E83375] text-white rounded-md text-xs font-bold">Apple Duo 特約熱推</span>
+                      <div class="flex items-center gap-2 bg-[#f2ebff] px-3 py-1.5 rounded-lg border border-[#cac4d2]/40">
+                        <span class="text-xs text-[#5f5792] font-medium">專屬邀請碼:</span>
+                        <span class="font-mono font-bold text-[#5B459B] text-sm">DUO</span>
+                        <button onclick="copyPromoCode('DUO', this)" class="text-xs text-[#E83375] hover:text-[#5B459B] font-bold flex items-center gap-0.5 ml-1 cursor-pointer">
+                          <span class="material-symbols-outlined text-[15px]">content_copy</span> 複製
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-[#161324] font-bold text-sm sm:text-base leading-snug">合資格全新客戶憑 PayKool 卡簽賬滿 $2,000 送你 $500 免找數簽賬額！</p>
+                    <p class="text-[#6b6678] text-xs mt-1">最快 3 分鐘核卡，即批即買 Apple 旗艦新機。</p>
+                  </div>
+                </div>
+
+                <!-- Slide 1 -->
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 pointer-events-none">
+                  <img alt="HKTVmall" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd7veoMHooLh4NxziWv2P_l41xQqG-kC__fwYl0PQGDJ_MA5-_L0WPRx32YbsKPVtSPka_f50tT3zbq8yZeXc-Yh7gtMTKcDvNZI46TgR13h2JHchzh1zMWFYOkaEScGLqU9EygwpLn_hJX04t9CZW7jEC3mLNB5PFdq3AIddFf6ohSXr_BlhzoqsgdCuPzYa2UUT-xyyPGoZzqKPwXP70RZWsmMd0B9ZZQlVRpUebTinpnRYrJs77dd1dCXEic0xiwg" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#161324]/85 via-transparent to-black/20"></div>
+                  <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-[#E83375]/30 max-w-xl">
+                    <div class="flex items-center justify-between gap-3 mb-2">
+                      <span class="px-2.5 py-1 bg-[#E83375] text-white rounded-md text-xs font-bold">HKTVmall 減價戰</span>
+                      <div class="flex items-center gap-2 bg-[#f2ebff] px-3 py-1.5 rounded-lg border border-[#cac4d2]/40">
+                        <span class="text-xs text-[#5f5792] font-medium">專屬邀請碼:</span>
+                        <span class="font-mono font-bold text-[#5B459B] text-sm">PPTVMALL</span>
+                        <button onclick="copyPromoCode('PPTVMALL', this)" class="text-xs text-[#E83375] font-bold flex items-center gap-0.5 ml-1 cursor-pointer">
+                          <span class="material-symbols-outlined text-[15px]">content_copy</span> 複製
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-[#161324] font-bold text-sm sm:text-base leading-snug">雙重著數慳到盡！新客戶迎新送 HK$500 HKTVmall 電子購物禮券</p>
+                    <p class="text-[#6b6678] text-xs mt-1">配合激減優惠狂買狂折，最快 3 分鐘出卡秒享網購優惠。</p>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 pointer-events-none">
+                  <img alt="GIORMANI" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3MRJqWOdciiEc9XEhcFkg8Tu4c0-CztKP9tyQA4Z5_vICKAnDoYOSaU8_dU5PMscLEZgJ3ckrG-oPJPmKwTVBVxTOU7C8GoGCPt9inT3QULIBX52GUXOwt4wVP-zyemTDxTYFCxY78J_L3d0k3WOsLl7BNM9nJmZXIqDWda0UWym3GvL92LT4exBc8zLcpHjkWvyfKKOL23xuqwVjuWG3prNMVF2HceHw2fG2DET1OpZ7RUqCfsdWxXOu5yHRajfYIQ" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#161324]/85 via-transparent to-black/20"></div>
+                  <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-[#E83375]/30 max-w-xl">
+                    <div class="flex items-center justify-between gap-3 mb-2">
+                      <span class="px-2.5 py-1 bg-[#E83375] text-white rounded-md text-xs font-bold">GIORMANI 茲曼尼特約</span>
+                      <div class="flex items-center gap-2 bg-[#f2ebff] px-3 py-1.5 rounded-lg border border-[#cac4d2]/40">
+                        <span class="text-xs text-[#5f5792] font-medium">專屬邀請碼:</span>
+                        <span class="font-mono font-bold text-[#5B459B] text-sm">MBGIORMANI</span>
+                        <button onclick="copyPromoCode('MBGIORMANI', this)" class="text-xs text-[#E83375] font-bold flex items-center gap-0.5 ml-1 cursor-pointer">
+                          <span class="material-symbols-outlined text-[15px]">content_copy</span> 複製
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-[#161324] font-bold text-sm sm:text-base leading-snug">於 GIORMANI 茲曼尼購物用 PayKool 卡單一簽賬滿 $3,000 送 $400 簽賬額！</p>
+                    <p class="text-[#6b6678] text-xs mt-1">換購心儀優質真皮梳化，升級居家極致享受。</p>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide absolute inset-0 w-full h-full transition-opacity duration-500 opacity-0 pointer-events-none">
+                  <img alt="2XCHANGE" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXiGwzqSPtxAgdpJpT-0xnnwcQ8jmvJ2uuvQQZauA5ASrVcmup6BsWZPm2UQCqKcu-Om0UagaGLUulIIkZZ4ZBGWsRTt_tmECBMsBIwyg7Vnua7ayvLer-6jzAghSZ7jp8CiXOtm4WdKxWYALjrb_qmg-XUoSKTWmvGq4K5iE-QCaPJRf2OV8EKCsJ_rL4IpobZkZntjswHbLy_5YIQnuTcxjM8LoUe4LFnrrUbaBPQGlfKOCpT9kPrVYsQ3WPvT-IA" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#161324]/85 via-transparent to-black/20"></div>
+                  <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-[#E83375]/30 max-w-xl">
+                    <div class="flex items-center justify-between gap-3 mb-2">
+                      <span class="px-2.5 py-1 bg-[#E83375] text-white rounded-md text-xs font-bold">2XCHANGE 旅遊特惠</span>
+                      <div class="flex items-center gap-2 bg-[#f2ebff] px-3 py-1.5 rounded-lg border border-[#cac4d2]/40">
+                        <span class="text-xs text-[#5f5792] font-medium">專屬邀請碼:</span>
+                        <span class="font-mono font-bold text-[#5B459B] text-sm">PP2XC</span>
+                        <button onclick="copyPromoCode('PP2XC', this)" class="text-xs text-[#E83375] font-bold flex items-center gap-0.5 ml-1 cursor-pointer">
+                          <span class="material-symbols-outlined text-[15px]">content_copy</span> 複製
+                        </button>
+                      </div>
+                    </div>
+                    <p class="text-[#161324] font-bold text-sm sm:text-base leading-snug">換外幣旅遊再賺獎賞！於門店兌換滿額享高達 HK$500 外幣現金獎賞</p>
+                    <p class="text-[#6b6678] text-xs mt-1">PayKool 持卡人專享：港幣兌換日圓、韓元或台幣，免外幣手續費！</p>
+                  </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <button onclick="prevCarouselSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#161324]/50 hover:bg-[#161324]/80 text-white flex items-center justify-center backdrop-blur-sm z-20 cursor-pointer">
+                  <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+                </button>
+                <button onclick="nextCarouselSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-[#161324]/50 hover:bg-[#161324]/80 text-white flex items-center justify-center backdrop-blur-sm z-20 cursor-pointer">
+                  <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+                </button>
+              </div>
+
+              <!-- Carousel Bottom Tabs -->
+              <div class="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-[#ece4ff] bg-[#F7F4FD] border-t border-[#ece4ff]">
+                <button onclick="setCarouselSlide(0)" class="carousel-tab-btn p-4 flex items-center gap-3 text-left bg-[#f2ebff] border-b-2 md:border-b-0 border-[#E83375] cursor-pointer">
+                  <span class="w-9 h-9 rounded-lg bg-[#5B459B]/10 text-[#5B459B] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">phone_iphone</span>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-[11px] text-[#5f5792] truncate">邀請碼: DUO</p>
+                    <p class="text-xs sm:text-sm font-bold text-[#161324] truncate">Apple Duo 出機攻略</p>
+                  </div>
+                </button>
+                <button onclick="setCarouselSlide(1)" class="carousel-tab-btn p-4 flex items-center gap-3 text-left hover:bg-[#f2ebff] cursor-pointer">
+                  <span class="w-9 h-9 rounded-lg bg-[#5B459B]/10 text-[#5B459B] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-[11px] text-[#5f5792] truncate">邀請碼: PPTVMALL</p>
+                    <p class="text-xs sm:text-sm font-bold text-[#161324] truncate">HKTVmall 迎新 $500</p>
+                  </div>
+                </button>
+                <button onclick="setCarouselSlide(2)" class="carousel-tab-btn p-4 flex items-center gap-3 text-left hover:bg-[#f2ebff] cursor-pointer">
+                  <span class="w-9 h-9 rounded-lg bg-[#5B459B]/10 text-[#5B459B] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">chair</span>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-[11px] text-[#5f5792] truncate">邀請碼: MBGIORMANI</p>
+                    <p class="text-xs sm:text-sm font-bold text-[#161324] truncate">茲曼尼梳化 $400</p>
+                  </div>
+                </button>
+                <button onclick="setCarouselSlide(3)" class="carousel-tab-btn p-4 flex items-center gap-3 text-left hover:bg-[#f2ebff] cursor-pointer">
+                  <span class="w-9 h-9 rounded-lg bg-[#5B459B]/10 text-[#5B459B] flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-[11px] text-[#5f5792] truncate">邀請碼: PP2XC</p>
+                    <p class="text-xs sm:text-sm font-bold text-[#161324] truncate">2XCHANGE 換匯 $500</p>
+                  </div>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Repayment Simulator & Hero Showcase -->
+        <section class="w-full py-14 bg-gradient-to-b from-[#fdf8ff] via-[#f7f1ff] to-[#fdf8ff]" id="calculator-section">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              
+              <!-- Left Brand Narrative -->
+              <div class="lg:col-span-6 flex flex-col items-start">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5B459B]/10 text-[#5B459B] mb-5 border border-[#5B459B]/20">
+                  <span class="w-2 h-2 rounded-full bg-[#E83375] animate-ping"></span>
+                  <span class="text-xs font-bold">尚未持有 PayKool 卡？ 3 分鐘網上出卡</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#161324] tracking-tight leading-tight mb-5">
+                  消費自由，自主分期。<br />
+                  <span class="bg-gradient-to-r from-[#E83375] via-[#5B459B] to-[#00AAEE] bg-clip-text text-transparent">
+                    零循環息陷阱，掌控生活節奏
+                  </span>
+                </h1>
+                <p class="text-[#5f5792] text-sm sm:text-base leading-relaxed mb-6">
+                  靈活自主分期，輕鬆掌控消費節奏。簽賬滿 $100 想點分就點分（3/4/5 個月）。一次性透明手續費，告別傳統銀行卡滾雪球複利。尊享港股上市公司 K Cash（2483.HK）持牌金融科技實力支援。
+                </p>
+                <div class="grid grid-cols-3 gap-3 w-full mb-6">
+                  <div class="bg-white p-3.5 rounded-xl border border-[#ece4ff] shadow-xs text-center">
+                    <span class="text-xs text-[#6b6678] block font-medium">審批速度</span>
+                    <span class="text-base sm:text-lg font-extrabold text-[#5B459B]">最快 3 分鐘</span>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-[#ece4ff] shadow-xs text-center">
+                    <span class="text-xs text-[#6b6678] block font-medium">免息周轉期</span>
+                    <span class="text-base sm:text-lg font-extrabold text-[#E83375]">長達 46 日</span>
+                  </div>
+                  <div class="bg-white p-3.5 rounded-xl border border-[#ece4ff] shadow-xs text-center">
+                    <span class="text-xs text-[#6b6678] block font-medium">信用發卡</span>
+                    <span class="text-base sm:text-lg font-extrabold text-[#00AAEE]">秒入 Apple Pay</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Simulator Card -->
+              <div class="lg:col-span-6 w-full">
+                <!-- Banner of Free 5k -->
+                <div class="mb-5 p-4 bg-gradient-to-r from-[#1F1841] via-[#5B459B] to-[#E83375] border-2 border-[#E83375]/40 rounded-2xl flex items-center gap-4 shadow-xl text-white">
+                  <div class="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-[28px] text-[#FCE3CB]">celebration</span>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-extrabold leading-snug">
+                      <span class="text-[#FCE3CB] underline">首 HK$5,000</span> 自主分期手續費全免！
+                    </h4>
+                    <p class="text-xs text-white/90 mt-0.5">所有新舊客戶無門檻即享 0 利息・0 成本自主分期</p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-6 sm:p-7 border border-[#ece4ff] shadow-xl">
+                  <div class="flex items-center justify-between mb-3">
+                    <label class="text-sm font-bold text-[#161324]">擬分期簽賬金額</label>
+                    <div id="home-calc-amount-display" class="text-2xl font-black text-[#5B459B] font-mono">HK$ 5,000</div>
+                  </div>
+                  
+                  <input id="home-calc-amount" type="range" min="500" max="50000" step="500" value="5000" oninput="updateHomeCalculator()" class="w-full h-3 mb-2" />
+                  
+                  <div class="flex justify-between text-xs text-[#6b6678] mb-4">
+                    <span>HK$ 500</span>
+                    <span>HK$ 25,000</span>
+                    <span>HK$ 50,000</span>
+                  </div>
+
+                  <!-- Quick Presets -->
+                  <div class="flex flex-wrap gap-2 mb-6">
+                    <button onclick="setHomeCalcAmount(3000)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] hover:bg-[#ece4ff] cursor-pointer">HK$ 3,000</button>
+                    <button onclick="setHomeCalcAmount(5000)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] hover:bg-[#ece4ff] cursor-pointer">HK$ 5,000</button>
+                    <button onclick="setHomeCalcAmount(10000)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] hover:bg-[#ece4ff] cursor-pointer">HK$ 10,000</button>
+                    <button onclick="setHomeCalcAmount(20000)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] hover:bg-[#ece4ff] cursor-pointer">HK$ 20,000</button>
+                  </div>
+
+                  <!-- Tenor Selection -->
+                  <label class="text-sm font-bold text-[#161324] block mb-2">選擇分期期數</label>
+                  <div class="grid grid-cols-3 gap-3 mb-6">
+                    <button data-tenor="3" onclick="setHomeCalcTenor(3)" class="home-calc-tenor-btn p-3 rounded-xl border-2 border-[#E83375] bg-[#E83375]/10 text-[#E83375] font-bold text-center cursor-pointer">
+                      <span class="block text-base">3 個月</span>
+                      <span class="block text-[11px] font-normal text-[#6b6678]">手續費 1.8%</span>
+                    </button>
+                    <button data-tenor="4" onclick="setHomeCalcTenor(4)" class="home-calc-tenor-btn p-3 rounded-xl border-2 border-[#ece4ff] bg-[#fdf8ff] text-[#494551] font-bold text-center cursor-pointer">
+                      <span class="block text-base">4 個月</span>
+                      <span class="block text-[11px] font-normal text-[#6b6678]">手續費 2.4%</span>
+                    </button>
+                    <button data-tenor="5" onclick="setHomeCalcTenor(5)" class="home-calc-tenor-btn p-3 rounded-xl border-2 border-[#ece4ff] bg-[#fdf8ff] text-[#494551] font-bold text-center cursor-pointer">
+                      <span class="block text-base">5 個月</span>
+                      <span class="block text-[11px] font-normal text-[#6b6678]">手續費 3.0%</span>
+                    </button>
+                  </div>
+
+                  <!-- Result Card -->
+                  <div class="bg-gradient-to-br from-[#1F1841] via-[#2B225A] to-[#432C82] text-white p-5 rounded-2xl">
+                    <div class="grid grid-cols-3 gap-3 text-center divide-x divide-white/10">
+                      <div>
+                        <span class="text-[11px] text-slate-300 block">每月供款</span>
+                        <span id="home-calc-monthly" class="text-xl font-black text-[#FCE3CB] font-mono">HK$ 1,667</span>
+                      </div>
+                      <div>
+                        <span class="text-[11px] text-slate-300 block">分期總手續費</span>
+                        <span id="home-calc-fee" class="text-xl font-bold font-mono">HK$ 0</span>
+                        <span id="home-calc-saved-fee" class="text-[10px] text-green-300 block mt-0.5">首 $5,000 豁免</span>
+                      </div>
+                      <div>
+                        <span class="text-[11px] text-slate-300 block">總還款額</span>
+                        <span id="home-calc-total" class="text-xl font-bold font-mono">HK$ 5,000</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Dual Flagship Cards Visual Showcase -->
+        <section class="w-full py-16 bg-[#161224] text-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+              <span class="text-xs font-bold text-[#DFC28D] uppercase tracking-wider">雙旗艦卡款</span>
+              <h2 class="text-3xl font-extrabold text-white tracking-tight mt-1">選定最切合你的 PayKool 信用卡</h2>
+              <p class="text-slate-400 text-sm mt-2">無論是日常自主分期，抑或業主高額低息融資，皆可享受秒速數碼卡務。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Visa Platinum Card -->
+              <div class="bg-[#1F1833] rounded-3xl p-8 border border-white/10 hover:border-[#E83375]/50 transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 rounded-full bg-[#E83375]/20 text-[#E83375] font-bold text-xs">熱門旗艦日常卡</span>
+                    <span class="font-mono text-xs text-slate-400">Visa Platinum</span>
+                  </div>
+                  <h3 class="text-2xl font-black text-white mb-2">PayKool Visa Platinum 信用卡</h3>
+                  <p class="text-slate-300 text-sm mb-6">簽賬滿 HK$100 自選 3/4/5 個月自主分期，首 HK$5,000 分期 0 手續費！免入息證明，最快 3 分鐘核卡即綁 Apple Pay。</p>
+                  
+                  <div class="space-y-2 mb-6">
+                    <div class="flex items-center gap-2 text-xs text-slate-200">
+                      <span class="material-symbols-outlined text-[16px] text-green-400">check_circle</span>
+                      <span>最高 HK$100,000 信貸額度</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-200">
+                      <span class="material-symbols-outlined text-[16px] text-green-400">check_circle</span>
+                      <span>迎新 4 揀 1（送 20吋前開行李篋或 HK$500 禮券）</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-200">
+                      <span class="material-symbols-outlined text-[16px] text-green-400">check_circle</span>
+                      <span>永久免首年年費 · 46 日免息周轉期</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                  <button onclick="openApplyModal('platinum')" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-[#E83375] to-[#5B459B] text-white font-bold text-sm hover:opacity-90 transition-all cursor-pointer">
+                    立即申請 Visa 白金卡
+                  </button>
+                  <button onclick="navigateTo('visa-platinum')" class="px-4 py-3 rounded-xl bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition-all cursor-pointer">
+                    詳情
+                  </button>
+                </div>
+              </div>
+
+              <!-- Prop Card -->
+              <div class="bg-[#1F1833] rounded-3xl p-8 border border-[#DFC28D]/30 hover:border-[#DFC28D] transition-all flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="px-3 py-1 rounded-full bg-[#DFC28D]/20 text-[#DFC28D] font-bold text-xs">物業業主首選</span>
+                    <span class="font-mono text-xs text-[#DFC28D]">Prop Card Elite</span>
+                  </div>
+                  <h3 class="text-2xl font-black text-white mb-2">PayKool Prop Card（業主專屬卡）</h3>
+                  <p class="text-slate-300 text-sm mb-6">專為香港物業業主度身訂造。最高獲批 HK$1,000,000 信用額，差餉單即核，免押樓契免律師樓！享超長 60 個月還款期。</p>
+                  
+                  <div class="space-y-2 mb-6">
+                    <div class="flex items-center gap-2 text-xs text-slate-200">
+                      <span class="material-symbols-outlined text-[16px] text-[#DFC28D]">check_circle</span>
+                      <span>高達 HK$1,000,000 尊尚額度</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-200">
+                      <span class="material-symbols-outlined text-[16px] text-[#DFC28D]">check_circle</span>
+                      <span>現金套現月費低至 0.12% 起 · FPS 1 分鐘到戶</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-200">
+                      <span class="material-symbols-outlined text-[16px] text-[#DFC28D]">check_circle</span>
+                      <span>業主終身免年費 · 物管費 1.5% 現金回贈</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                  <button onclick="openApplyModal('prop')" class="flex-1 py-3 rounded-xl bg-gradient-to-r from-[#DFC28D] to-[#FCE3CB] text-[#161224] font-black text-sm hover:opacity-90 transition-all cursor-pointer">
+                    立即申請 Prop Card
+                  </button>
+                  <button onclick="navigateTo('prop-card')" class="px-4 py-3 rounded-xl bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition-all cursor-pointer">
+                    詳情
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ================= PAGE 2: CASH ADVANCE ================= -->
+      <section id="view-cash-advance" class="page-view w-full">
+        <div class="w-full bg-gradient-to-b from-[#ece4ff]/60 via-[#fdf8ff] to-[#fdf8ff] pt-8 pb-16 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+              <span class="px-3 py-1 rounded-full bg-[#00AAEE]/10 text-[#00AAEE] text-xs font-bold mb-2 inline-block">「Fun K 易」現金套現</span>
+              <h1 class="text-3xl sm:text-5xl font-extrabold text-[#161324] tracking-tight">隨時隨地，即時現金過數</h1>
+              <p class="text-[#5f5792] text-sm sm:text-base mt-2">將信用卡可用信貸額度秒速轉化為應急流動現金，最快 1 分鐘經 FPS 轉數快直達個人銀行戶口。</p>
+            </div>
+
+            <!-- Cash Advance Calculator -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-[#ece4ff] shadow-xl mb-12">
+              <div class="flex items-center justify-between mb-3">
+                <label class="text-sm font-bold text-[#161324]">擬提取套現金額</label>
+                <div id="cash-advance-amount-display" class="text-2xl sm:text-3xl font-black text-[#00AAEE] font-mono">HK$ 50,000</div>
+              </div>
+
+              <input id="cash-advance-amount" type="range" min="5000" max="100000" step="1000" value="50000" oninput="updateCashAdvanceCalc()" class="w-full h-3 mb-2" />
+              <div class="flex justify-between text-xs text-[#6b6678] mb-4 font-medium">
+                <span>HK$ 5,000</span>
+                <span>HK$ 50,000</span>
+                <span>HK$ 100,000</span>
+              </div>
+
+              <div class="flex flex-wrap gap-2 mb-6">
+                <button onclick="setCashAdvanceAmount(10000)" class="px-3 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] cursor-pointer">HK$ 10,000</button>
+                <button onclick="setCashAdvanceAmount(30000)" class="px-3 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] cursor-pointer">HK$ 30,000</button>
+                <button onclick="setCashAdvanceAmount(50000)" class="px-3 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] cursor-pointer">HK$ 50,000</button>
+                <button onclick="setCashAdvanceAmount(100000)" class="px-3 py-1 rounded-md text-xs font-bold bg-[#f2ebff] text-[#5B459B] cursor-pointer">HK$ 100,000</button>
+              </div>
+
+              <label class="text-sm font-bold text-[#161324] block mb-2">選擇攤分期數（月）</label>
+              <div class="grid grid-cols-4 gap-3 mb-6">
+                <button data-tenor="6" onclick="setCashAdvanceTenor(6)" class="cash-advance-tenor-btn p-3 rounded-xl border border-[#ece4ff] bg-white text-[#494551] font-bold text-center cursor-pointer">6 個月</button>
+                <button data-tenor="12" onclick="setCashAdvanceTenor(12)" class="cash-advance-tenor-btn p-3 rounded-xl border border-[#00AAEE] bg-[#00AAEE]/10 text-[#00AAEE] font-bold text-center cursor-pointer">12 個月</button>
+                <button data-tenor="24" onclick="setCashAdvanceTenor(24)" class="cash-advance-tenor-btn p-3 rounded-xl border border-[#ece4ff] bg-white text-[#494551] font-bold text-center cursor-pointer">24 個月</button>
+                <button data-tenor="36" onclick="setCashAdvanceTenor(36)" class="cash-advance-tenor-btn p-3 rounded-xl border border-[#ece4ff] bg-white text-[#494551] font-bold text-center cursor-pointer">36 個月</button>
+              </div>
+
+              <!-- Result -->
+              <div class="bg-gradient-to-br from-[#1F1841] via-[#11314C] to-[#00AAEE] text-white p-6 rounded-2xl">
+                <div class="grid grid-cols-3 gap-3 text-center divide-x divide-white/10">
+                  <div>
+                    <span class="text-xs text-slate-200 block mb-1">預計每月供款</span>
+                    <span id="cash-advance-monthly" class="text-2xl font-black font-mono">HK$ 4,252</span>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-200 block mb-1">每月手續費</span>
+                    <span id="cash-advance-fee" class="text-2xl font-bold font-mono">HK$ 85</span>
+                    <span class="text-[10px] text-cyan-200 block mt-0.5">月平息 0.17%</span>
+                  </div>
+                  <div>
+                    <span class="text-xs text-slate-200 block mb-1">總還款額</span>
+                    <span id="cash-advance-total" class="text-2xl font-bold font-mono">HK$ 51,020</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 flex justify-center">
+                <button onclick="openApplyModal('platinum')" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#00AAEE] to-[#5B459B] text-white font-extrabold text-sm shadow-md hover:opacity-90 cursor-pointer">
+                  即刻提取「Fun K 易」現金
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3: PROMOTIONS ================= -->
+      <section id="view-promotions" class="page-view w-full">
+        <div class="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div class="border-b-2 border-[#161324] pb-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span class="text-xs font-mono font-bold tracking-widest text-[#E83375] uppercase">PAYKOOL EDITORIAL · 2027</span>
+              <h1 class="text-3xl sm:text-5xl font-black text-[#161324] tracking-tight mt-1">信用卡最新推廣與獨家優惠</h1>
+            </div>
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap gap-2">
+              <button data-cat="all" onclick="filterPromotions('all')" class="promo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-[#E83375] text-white cursor-pointer">全部優惠</button>
+              <button data-cat="tech" onclick="filterPromotions('tech')" class="promo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-[#494551] border border-[#ece4ff] cursor-pointer">數碼潮流</button>
+              <button data-cat="shopping" onclick="filterPromotions('shopping')" class="promo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-[#494551] border border-[#ece4ff] cursor-pointer">網購生活</button>
+              <button data-cat="travel" onclick="filterPromotions('travel')" class="promo-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-white text-[#494551] border border-[#ece4ff] cursor-pointer">旅遊外匯</button>
+            </div>
+          </div>
+
+          <!-- Promo Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Item 1 -->
+            <div data-category="tech" class="promo-card-item bg-white rounded-2xl border border-[#ece4ff] overflow-hidden shadow-sm flex flex-col justify-between">
+              <img alt="Apple Duo" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqp-1fQCL2qkk8G2zTahdAznjRYVFP9zMD2Bx_eITzbOk6YHFWNLP0zzagfL302tHFAot-XobTfMBRFH-Ay2LhFGHFvop06pHYxU_IjUTK8SsBCv202E5uBd4hpHh-KaRDincNBMqA_5xvd7nEX89QuQ99ONyklinU-Vac5kgXQzzzcTuhOpmlYuy9UmhjffKJnXbHKo4elH1X-LUvpaJoaBNJLby72TswvZ7EaPjO2Yz1JtqjIvdyNutl311PYKkjYQ" />
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-[#E83375]/10 text-[#E83375]">數碼潮流</span>
+                  <h3 class="font-extrabold text-base text-[#161324] mt-2">Apple Duo 出機滿額享 HK$500 簽賬回贈</h3>
+                  <p class="text-xs text-[#5f5792] mt-1">憑 PayKool 卡於 Apple Duo 單一簽賬滿 $2,000 即獲 $500 免找數簽賬額。</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-[#ece4ff] flex items-center justify-between">
+                  <span class="text-xs font-mono font-bold text-[#5B459B]">代碼: DUO</span>
+                  <button onclick="copyPromoCode('DUO', this)" class="text-xs text-[#E83375] font-bold cursor-pointer">複製代碼</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div data-category="shopping" class="promo-card-item bg-white rounded-2xl border border-[#ece4ff] overflow-hidden shadow-sm flex flex-col justify-between">
+              <img alt="HKTVmall" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd7veoMHooLh4NxziWv2P_l41xQqG-kC__fwYl0PQGDJ_MA5-_L0WPRx32YbsKPVtSPka_f50tT3zbq8yZeXc-Yh7gtMTKcDvNZI46TgR13h2JHchzh1zMWFYOkaEScGLqU9EygwpLn_hJX04t9CZW7jEC3mLNB5PFdq3AIddFf6ohSXr_BlhzoqsgdCuPzYa2UUT-xyyPGoZzqKPwXP70RZWsmMd0B9ZZQlVRpUebTinpnRYrJs77dd1dCXEic0xiwg" />
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-[#E83375]/10 text-[#E83375]">網購生活</span>
+                  <h3 class="font-extrabold text-base text-[#161324] mt-2">HKTVmall 狂賞送 HK$500 電子現金券</h3>
+                  <p class="text-xs text-[#5f5792] mt-1">全新客戶成功批核出卡，首 60 天內累積簽賬滿 $3,000 即享購物禮券。</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-[#ece4ff] flex items-center justify-between">
+                  <span class="text-xs font-mono font-bold text-[#5B459B]">代碼: PPTVMALL</span>
+                  <button onclick="copyPromoCode('PPTVMALL', this)" class="text-xs text-[#E83375] font-bold cursor-pointer">複製代碼</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div data-category="travel" class="promo-card-item bg-white rounded-2xl border border-[#ece4ff] overflow-hidden shadow-sm flex flex-col justify-between">
+              <img alt="2XCHANGE" class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVXiGwzqSPtxAgdpJpT-0xnnwcQ8jmvJ2uuvQQZauA5ASrVcmup6BsWZPm2UQCqKcu-Om0UagaGLUulIIkZZ4ZBGWsRTt_tmECBMsBIwyg7Vnua7ayvLer-6jzAghSZ7jp8CiXOtm4WdKxWYALjrb_qmg-XUoSKTWmvGq4K5iE-QCaPJRf2OV8EKCsJ_rL4IpobZkZntjswHbLy_5YIQnuTcxjM8LoUe4LFnrrUbaBPQGlfKOCpT9kPrVYsQ3WPvT-IA" />
+              <div class="p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-[#E83375]/10 text-[#E83375]">旅遊外匯</span>
+                  <h3 class="font-extrabold text-base text-[#161324] mt-2">2XCHANGE 免手續費換外匯賺 HK$500</h3>
+                  <p class="text-xs text-[#5f5792] mt-1">日圓、韓元或台幣門市兌換滿額，尊享免手續費與高達 $500 回贈。</p>
+                </div>
+                <div class="mt-4 pt-3 border-t border-[#ece4ff] flex items-center justify-between">
+                  <span class="text-xs font-mono font-bold text-[#5B459B]">代碼: PP2XC</span>
+                  <button onclick="copyPromoCode('PP2XC', this)" class="text-xs text-[#E83375] font-bold cursor-pointer">複製代碼</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 4: TU REPORT ================= -->
+      <section id="view-tu-report" class="page-view w-full">
+        <div class="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+          <div class="text-center mb-10">
+            <span class="px-3 py-1 rounded-full bg-[#5B459B]/10 text-[#5B459B] text-xs font-bold mb-2 inline-block">免費信貸管理</span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-[#161324] tracking-tight">智能信貸評估報告 (免費 Check TU)</h1>
+            <p class="text-[#5f5792] text-sm sm:text-base mt-2">透過國際標準 Soft Check 軟性查詢，零痕跡即時查閱環聯 TU 評級，完全不影響信貸分數。</p>
+          </div>
+
+          <!-- TU Interactive Visual Gauge Card -->
+          <div class="bg-white rounded-3xl p-8 border border-[#ece4ff] shadow-xl mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+              <div class="text-center p-6 bg-[#fdf8ff] rounded-2xl border border-[#ece4ff]">
+                <span class="text-xs text-[#6b6678] font-bold">目前預估 TU 評級</span>
+                <div class="text-5xl font-black text-[#5B459B] my-2">A 級</div>
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-green-100 text-green-700 font-bold">極佳信貸狀態</span>
+              </div>
+              <div class="md:col-span-2 space-y-4">
+                <div class="flex justify-between text-xs font-bold text-[#161324]">
+                  <span>環聯評分級別：A 至 J</span>
+                  <span class="text-[#5B459B]">全港前 15% 頂尖客群</span>
+                </div>
+                <!-- Visual Progress Bar -->
+                <div class="w-full h-4 bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 rounded-full overflow-hidden p-0.5">
+                  <div class="h-full w-4/5 bg-white/40 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-center text-xs">
+                  <div class="p-2 bg-[#f2ebff] rounded-lg">
+                    <span class="text-[#6b6678] block">信用卡使用率</span>
+                    <span class="font-bold text-[#161324]">24%（優質區間）</span>
+                  </div>
+                  <div class="p-2 bg-[#f2ebff] rounded-lg">
+                    <span class="text-[#6b6678] block">準時還款記錄</span>
+                    <span class="font-bold text-green-600">100% 完美</span>
+                  </div>
+                  <div class="p-2 bg-[#f2ebff] rounded-lg">
+                    <span class="text-[#6b6678] block">查詢紀錄痕跡</span>
+                    <span class="font-bold text-[#5B459B]">0 影響 (Soft Check)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-[#ece4ff] text-center">
+              <button onclick="openApplyModal('platinum')" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#5B459B] to-[#E83375] text-white font-bold text-sm shadow-md hover:opacity-90 cursor-pointer">
+                立即在 App 內免費查詢我的真實 TU 評分
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 5: COMPARE CARDS ================= -->
+      <section id="view-compare" class="page-view w-full">
+        <div class="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div class="text-center mb-10">
+            <span class="px-3 py-1 rounded-full bg-[#5B459B]/10 text-[#5B459B] text-xs font-bold mb-2 inline-block">2027 旗艦對決</span>
+            <h1 class="text-3xl sm:text-5xl font-black text-[#161324] tracking-tight">比較 PayKool 雙旗艦信用卡</h1>
+            <p class="text-[#5f5792] text-sm mt-2">根據個人理財習慣與資產屬性，揀選最切合你的卡款。</p>
+          </div>
+
+          <!-- Comparison Matrix Table -->
+          <div class="bg-white rounded-3xl border border-[#ece4ff] overflow-hidden shadow-lg mb-12">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-[#F7F4FD] border-b border-[#ece4ff]">
+                  <th class="p-5 font-extrabold text-[#161324] w-1/3">核心功能與權益</th>
+                  <th class="p-5 font-black text-[#5B459B] w-1/3 border-x border-[#ece4ff]">Visa Platinum 白金卡</th>
+                  <th class="p-5 font-black text-[#9E7D3B] w-1/3">Prop Card 業主專屬卡</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-[#ece4ff]">
+                <tr>
+                  <td class="p-4 font-bold text-[#161324] bg-[#fdf8ff]">定位客群</td>
+                  <td class="p-4 border-x border-[#ece4ff]">大專生、自由職業、日常消費</td>
+                  <td class="p-4">香港住宅、居屋、工商物業登記業主</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-[#161324] bg-[#fdf8ff]">最高信用額度</td>
+                  <td class="p-4 font-bold text-[#5B459B] border-x border-[#ece4ff]">HK$ 100,000</td>
+                  <td class="p-4 font-bold text-[#9E7D3B]">高達 HK$ 1,000,000</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-[#161324] bg-[#fdf8ff]">自主分期期數</td>
+                  <td class="p-4 border-x border-[#ece4ff]">3、4、5 個月自選期數</td>
+                  <td class="p-4">高達 60 個月超長年期分期</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-[#161324] bg-[#fdf8ff]">限時優惠</td>
+                  <td class="p-4 text-green-600 font-bold border-x border-[#ece4ff]">首 HK$5,000 分期免手續費</td>
+                  <td class="p-4 text-green-600 font-bold">物業持有人終身免年費</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-[#161324] bg-[#fdf8ff]">現金套現月平息</td>
+                  <td class="p-4 border-x border-[#ece4ff]">0.17% 起</td>
+                  <td class="p-4">低至 0.12% 起</td>
+                </tr>
+                <tr>
+                  <td class="p-4 font-bold text-[#161324] bg-[#fdf8ff]">審批所需文件</td>
+                  <td class="p-4 border-x border-[#ece4ff]">香港身份證快速驗證（免入息）</td>
+                  <td class="p-4">差餉單拍照（免押樓契、免律師）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 6: VISA PLATINUM ================= -->
+      <section id="view-visa-platinum" class="page-view w-full">
+        <div class="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+            <div class="lg:col-span-5 flex flex-col items-center">
+              <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-3xl p-6 text-white shadow-2xl bg-gradient-to-br from-[#1F1841] via-[#352564] to-[#120D27] border border-[#6b52ad]/40 flex flex-col justify-between">
+                <div class="flex justify-between items-center">
+                  <span class="text-2xl font-black">PayKool</span>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-[#E83375]">Platinum</span>
+                </div>
+                <div class="my-4 flex items-center gap-3">
+                  <div class="w-10 h-8 rounded bg-gradient-to-br from-[#F4D06F] to-[#AA7C11]"></div>
+                  <span class="material-symbols-outlined text-[20px] text-white/50">contactless</span>
+                </div>
+                <div class="flex justify-between items-end">
+                  <span class="font-mono text-xs">•••• •••• •••• 8892</span>
+                  <span class="font-black italic text-xl">VISA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7">
+              <span class="px-3 py-1 rounded-full bg-[#f2ebff] text-[#5B459B] text-xs font-bold mb-3 inline-block">旗艦日常首選</span>
+              <h1 class="text-3xl sm:text-5xl font-extrabold text-[#161324] tracking-tight">PayKool Visa Platinum 信用卡</h1>
+              <p class="text-[#5f5792] text-base mt-3 leading-relaxed">首 HK$5,000 分期 0 手續費！免入息證明，最快 3 分鐘 AI 秒批即用。送 20 吋行李篋或 HK$500 現金券迎新好禮！</p>
+              
+              <div class="flex gap-4 mt-6">
+                <button onclick="openApplyModal('platinum')" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#E83375] to-[#5B459B] text-white font-bold text-sm shadow-md cursor-pointer">
+                  立即申請 Visa 白金卡
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 7: PROP CARD ================= -->
+      <section id="view-prop-card" class="page-view w-full bg-[#0c0914] text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+            <div class="lg:col-span-5 flex flex-col items-center">
+              <div class="w-full max-w-[380px] aspect-[1.586/1] rounded-3xl p-6 text-white shadow-2xl bg-gradient-to-br from-[#1C172B] via-[#0E0B17] to-[#07050C] border-2 border-[#DFC28D]/50 flex flex-col justify-between">
+                <div class="flex justify-between items-center">
+                  <span class="text-2xl font-black">PayKool</span>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-[#DFC28D] text-[#161224]">Prop Card</span>
+                </div>
+                <div class="my-4 flex items-center gap-3">
+                  <div class="w-10 h-8 rounded bg-gradient-to-br from-[#FCE3CB] to-[#DFC28D]"></div>
+                  <span class="material-symbols-outlined text-[20px] text-[#DFC28D]">domain</span>
+                </div>
+                <div class="flex justify-between items-end">
+                  <span class="font-mono text-xs text-[#DFC28D]">•••• •••• •••• 6289</span>
+                  <span class="font-black italic text-xl text-[#DFC28D]">VISA</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7">
+              <span class="px-3 py-1 rounded-full bg-[#241d38] border border-[#DFC28D]/40 text-[#DFC28D] text-xs font-bold mb-3 inline-block">物業業主旗艦</span>
+              <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">PayKool Prop Card（業主專屬卡）</h1>
+              <p class="text-slate-300 text-base mt-3 leading-relaxed">高達 HK$1,000,000 信用額度。免押樓契、免律師費，只需一張差餉單即可極速辦理！享長達 60 個月還款期及物業管理費 1.5% 現金回贈。</p>
+              
+              <div class="flex gap-4 mt-6">
+                <button onclick="openApplyModal('prop')" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#DFC28D] to-[#FCE3CB] text-[#161224] font-black text-sm shadow-md cursor-pointer">
+                  立即申請 Prop Card
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Homeowner Loan Simulator -->
+          <div class="bg-[#1F1833] rounded-3xl p-6 sm:p-8 border border-[#DFC28D]/30 max-w-4xl mx-auto mb-12">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-bold text-white">Prop Card 大額資金融資試算機</h3>
+              <p class="text-xs text-slate-400 mt-1">月平息低至 0.12% 起，自選 12 至 60 個月超長年期</p>
+            </div>
+
+            <div class="flex items-center justify-between mb-2">
+              <label class="text-sm font-bold text-white">擬提現金額</label>
+              <div id="prop-amount-display" class="text-2xl font-black text-[#FCE3CB] font-mono">HK$ 300,000</div>
+            </div>
+            <input id="prop-amount-input" type="range" min="50000" max="1000000" step="10000" value="300000" oninput="updatePropCalc()" class="w-full h-3 gold-slider mb-2" />
+            <div class="flex justify-between text-xs text-slate-400 mb-6">
+              <span>HK$ 50,000</span>
+              <span>HK$ 500,000</span>
+              <span>HK$ 1,000,000</span>
+            </div>
+
+            <label class="text-sm font-bold text-white block mb-2">自選攤分期數（月）</label>
+            <div class="grid grid-cols-5 gap-2 mb-6">
+              <button data-tenor="12" onclick="setPropTenor(12)" class="prop-tenor-btn p-2 rounded-lg border border-white/10 bg-[#161224] text-slate-400 font-bold text-center cursor-pointer">12 期</button>
+              <button data-tenor="24" onclick="setPropTenor(24)" class="prop-tenor-btn p-2 rounded-lg border border-white/10 bg-[#161224] text-slate-400 font-bold text-center cursor-pointer">24 期</button>
+              <button data-tenor="36" onclick="setPropTenor(36)" class="prop-tenor-btn p-2 rounded-lg border border-[#DFC28D] bg-[#DFC28D]/15 text-[#FCE3CB] font-bold text-center cursor-pointer">36 期</button>
+              <button data-tenor="48" onclick="setPropTenor(48)" class="prop-tenor-btn p-2 rounded-lg border border-white/10 bg-[#161224] text-slate-400 font-bold text-center cursor-pointer">48 期</button>
+              <button data-tenor="60" onclick="setPropTenor(60)" class="prop-tenor-btn p-2 rounded-lg border border-white/10 bg-[#161224] text-slate-400 font-bold text-center cursor-pointer">60 期</button>
+            </div>
+
+            <div class="bg-[#0c0914] p-5 rounded-2xl border border-[#DFC28D]/40 text-center">
+              <div class="grid grid-cols-3 gap-3 divide-x divide-white/10">
+                <div>
+                  <span class="text-xs text-[#DFC28D] block">每月供款</span>
+                  <span id="prop-calc-monthly" class="text-xl font-bold font-mono text-white">HK$ 8,753</span>
+                </div>
+                <div>
+                  <span class="text-xs text-[#DFC28D] block">每月手續費</span>
+                  <span id="prop-calc-fee" class="text-xl font-bold font-mono text-[#FCE3CB]">HK$ 420</span>
+                </div>
+                <div>
+                  <span class="text-xs text-[#DFC28D] block">總還款額</span>
+                  <span id="prop-calc-total" class="text-xl font-bold font-mono text-white">HK$ 315,120</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 4. Universal Statutory Banner (Always aligned across all pages) -->
+    <aside class="w-full bg-[#FFF8E6] px-6 py-3.5 border-y border-[#FFE299] text-center">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-xs sm:text-sm font-semibold text-[#664D03]">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-[#B25E00]">warning</span>
+          <span>忠告：借錢梗要還，咪俾錢中介</span>
+        </div>
+        <div class="hidden sm:block text-[#FFE299]">|</div>
+        <div class="text-xs text-[#856404] font-normal">
+          查詢及投訴熱線 / Hotline: +852 3899 2288 &bull; 放債人牌照號碼 / Licence No.: 1439/2025
+        </div>
+      </div>
+    </aside>
+
+    <!-- 5. Universal Corporate Footer -->
+    <footer class="w-full bg-white border-t border-[#ece4ff] py-12 px-6 lg:px-12">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 pb-10">
+        <div class="md:col-span-2 flex flex-col gap-3">
+          <div class="flex items-center gap-3">
+            <span class="font-black text-xl text-[#161324]">PayKool Credit Card</span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-[#f2ebff] text-[#5B459B] font-bold">2483.HK</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#6b6678] max-w-lg leading-relaxed">
+            PayKool 為香港主板上市公司 K Cash Limited（港股代號：2483.HK）旗下嶄新科技金融旗艦品牌。結合持牌銀行級加密基建與自主信貸模型，提供靈活自主分期體驗。
+          </p>
+          <div class="text-xs text-[#6b6678] font-mono">放債人牌照號碼 / Money Lender's Licence No.: 1439/2025</div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-[#161324] mb-3">產品與服務</h4>
+          <ul class="space-y-2 text-xs text-[#6b6678]">
+            <li><a href="#visa-platinum" onclick="navigateTo('visa-platinum'); return false;" class="hover:text-[#5B459B]">Visa Platinum 信用卡</a></li>
+            <li><a href="#prop-card" onclick="navigateTo('prop-card'); return false;" class="hover:text-[#5B459B]">Prop Card 業主專屬卡</a></li>
+            <li><a href="#cash-advance" onclick="navigateTo('cash-advance'); return false;" class="hover:text-[#5B459B]">「Fun K 易」現金分期</a></li>
+            <li><a href="#compare" onclick="navigateTo('compare'); return false;" class="hover:text-[#5B459B]">兩大旗艦卡比較</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-[#161324] mb-3">客戶支援</h4>
+          <ul class="space-y-2 text-xs text-[#6b6678]">
+            <li><a href="#tu-report" onclick="navigateTo('tu-report'); return false;" class="hover:text-[#5B459B]">免費查閱 TU 評級</a></li>
+            <li><a href="#promotions" onclick="navigateTo('promotions'); return false;" class="hover:text-[#5B459B]">最新推廣優惠</a></li>
+            <li><span class="cursor-pointer hover:text-[#5B459B]" onclick="toggleWhatsAppPopup()">WhatsApp 客服專線</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto pt-6 border-t border-[#ece4ff] flex flex-col sm:flex-row items-center justify-between text-xs text-[#6b6678] gap-4">
+        <div>&copy; 2027 PayKool Limited (A Member of K Cash Limited, 2483.HK). 版權所有。</div>
+        <div class="flex gap-4">
+          <span class="hover:underline cursor-pointer">私隱政策聲明</span>
+          <span class="hover:underline cursor-pointer">持卡人合約條款</span>
+          <span class="hover:underline cursor-pointer">安全理財指引</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 6. Floating WhatsApp Button & Popup -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+      <!-- Popup Box -->
+      <div id="whatsapp-popup" class="hidden mb-3 w-72 bg-white rounded-2xl shadow-2xl border border-[#ece4ff] p-4 text-xs">
+        <div class="flex items-center justify-between pb-2 border-b border-[#ece4ff]">
+          <span class="font-bold text-[#161324]">PayKool 客服支援</span>
+          <button onclick="toggleWhatsAppPopup()" class="text-slate-400 hover:text-black cursor-pointer">
+            <span class="material-symbols-outlined text-[16px]">close</span>
+          </button>
+        </div>
+        <p class="text-[#6b6678] my-3 leading-relaxed">有任何關於申請或分期疑問？立即與官方真人客服專員 WhatsApp 對話！</p>
+        <a href="https://wa.me/85238992288" target="_blank" rel="noopener noreferrer" class="w-full py-2 bg-[#25D366] text-white rounded-lg font-bold flex items-center justify-center gap-1.5 hover:opacity-90">
+          <span>開啟 WhatsApp 對話</span>
+        </a>
+      </div>
+
+      <button onclick="toggleWhatsAppPopup()" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-xl hover:scale-105 transition-transform cursor-pointer">
+        <span class="material-symbols-outlined text-[28px]">chat</span>
+      </button>
+    </div>
+
+    <!-- 7. Universal Application Modal -->
+    <div id="application-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-4">
+      <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+        <button onclick="closeApplyModal()" class="absolute top-5 right-5 text-slate-400 hover:text-black cursor-pointer">
+          <span class="material-symbols-outlined text-[22px]">close</span>
+        </button>
+
+        <!-- Form Step -->
+        <div id="modal-step-form">
+          <div class="mb-5">
+            <span class="text-xs font-bold text-[#5B459B] uppercase tracking-wider">3 分鐘網上出卡</span>
+            <h3 class="text-2xl font-black text-[#161324] mt-1">申請 PayKool 信用卡</h3>
+          </div>
+
+          <!-- Card Selector -->
+          <div class="grid grid-cols-2 gap-3 mb-5">
+            <button type="button" id="modal-card-btn-plat" onclick="selectModalCard('platinum')" class="p-3 rounded-xl border-2 border-[#E83375] bg-[#E83375]/10 text-left cursor-pointer">
+              <span class="text-xs font-bold block text-[#161324]">Visa Platinum</span>
+              <span class="text-[10px] text-[#6b6678]">日常自主分期</span>
+            </button>
+            <button type="button" id="modal-card-btn-prop" onclick="selectModalCard('prop')" class="p-3 rounded-xl border-2 border-[#ece4ff] bg-white text-left cursor-pointer">
+              <span class="text-xs font-bold block text-[#161324]">Prop Card</span>
+              <span class="text-[10px] text-[#6b6678]">業主百萬授信</span>
+            </button>
+          </div>
+
+          <form onsubmit="handleApplySubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-[#161324] mb-1">香港身份證英文字母及首 4 位數字</label>
+              <input type="text" required placeholder="例如：A1234 (***)" class="w-full px-4 py-2.5 rounded-xl border border-[#ece4ff] text-sm focus:outline-none focus:border-[#5B459B]" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#161324] mb-1">流動電話號碼（接收 SMS 驗證碼）</label>
+              <input type="tel" required placeholder="例如：9123 4567" class="w-full px-4 py-2.5 rounded-xl border border-[#ece4ff] text-sm focus:outline-none focus:border-[#5B459B]" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#161324] mb-1">邀請碼 / 優惠碼</label>
+              <input type="text" id="modal-promo-code" value="TK" class="w-full px-4 py-2.5 rounded-xl border border-[#ece4ff] text-sm font-mono focus:outline-none focus:border-[#5B459B]" />
+            </div>
+
+            <p class="text-[11px] text-[#6b6678] leading-tight">
+              按「即時遞交申請」即代表閣下已閱讀並同意 PayKool 持卡人協議條款及個人資料收集聲明。
+            </p>
+
+            <button type="submit" id="modal-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#E83375] to-[#5B459B] text-white font-extrabold text-sm shadow-md hover:opacity-95 cursor-pointer">
+              即時遞交申請
+            </button>
+          </form>
+        </div>
+
+        <!-- Success Step -->
+        <div id="modal-step-success" class="hidden text-center py-6">
+          <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4">
+            <span class="material-symbols-outlined text-[36px]">check_circle</span>
+          </div>
+          <h3 class="text-2xl font-black text-[#161324] mb-2">初步申請已成功遞交！</h3>
+          <p class="text-xs sm:text-sm text-[#5f5792] leading-relaxed mb-6">
+            系統正在進行大數據智能審批。我們已將一次性驗證連結經 SMS 發送至閣下的流動電話，請點擊連結完成認證並即時取得虛擬卡。
+          </p>
+          <button onclick="closeApplyModal()" class="px-8 py-3 rounded-xl bg-[#5B459B] text-white font-bold text-sm cursor-pointer">
+            返回主頁
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Core Vanilla Application Script -->
+    <script src="./script.js"></script>
+
   </body>
 </html>
-
